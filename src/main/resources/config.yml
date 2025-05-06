@@ -1,0 +1,9 @@
+# ----------------------
+#  STATUS PLUGIN CONFIG
+# ----------------------
+
+# Set colors using formatting codes "§", view all codes here: https://minecraft.wiki/w/Talk:Formatting_codes
+
+# Tab Server name to display in tab
+enable-tab-server-name: false
+tab-server-name: "§eServer Name"
