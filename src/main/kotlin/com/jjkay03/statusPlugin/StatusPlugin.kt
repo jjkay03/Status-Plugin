@@ -1,5 +1,6 @@
 package com.jjkay03.statusPlugin
 
+import com.jjkay03.statusPlugin.status.StatusManager
 import org.bukkit.plugin.java.JavaPlugin
 
 class StatusPlugin : JavaPlugin() {
@@ -20,6 +21,9 @@ class StatusPlugin : JavaPlugin() {
 
         // COMMANDS
         // ...
+
+        // REGISTER EVENTS
+        server.pluginManager.registerEvents(StatusManager(), this)
     }
 
     // Plugin shutdown logic
