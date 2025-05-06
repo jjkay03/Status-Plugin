@@ -1,0 +1,8 @@
+name: StatusPlugin
+version: '1.0'
+main: com.jjkay03.statusPlugin.StatusPlugin
+api-version: '1.21'
+load: STARTUP
+authors: [ jjkay03 ]
+description: Allows players to set a status in the tab list.
+website: https://jjkay03.com/
