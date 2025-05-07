@@ -1,5 +1,6 @@
 package com.jjkay03.statusPlugin.status
 
+import com.jjkay03.statusPlugin.status_gui.StatusGUI
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
@@ -14,10 +15,7 @@ class StatusCommand : CommandExecutor, TabCompleter {
         if (sender !is Player) {sender.sendMessage("§eOnly players can use this command!"); return true;}
 
         // Open GUI if no args provided
-        if (args.isEmpty()) {
-            // TODO OPEN GUI
-            return true
-        }
+        if (args.isEmpty()) { openStatusGUI(sender); return true }
 
         // Deal with arguments
         when (args[0].lowercase()) {
@@ -34,9 +32,7 @@ class StatusCommand : CommandExecutor, TabCompleter {
             }
 
             // GUI
-            "gui" -> {
-                // TODO OPEN GUI
-            }
+            "gui" -> { openStatusGUI(sender) }
         }
 
         return true
@@ -57,5 +53,12 @@ class StatusCommand : CommandExecutor, TabCompleter {
 
             else -> emptyList()
         }
+    }
+
+    // Function to open status GUI
+    fun openStatusGUI(player: Player) {
+        val statusGUIInstance = StatusGUI()
+        statusGUIInstance.updateGUI(player)
+        statusGUIInstance.statusGUIMenu.open(player)
     }
 }
