@@ -4,12 +4,10 @@
 
 # Set colors using formatting codes "§", view all codes here: https://minecraft.wiki/w/Talk:Formatting_codes
 
-# TODO: NOT YET IMPLEMENTED
 # Join message to remind the player to set their status
-enable-join-message: true
-join-message: "§7Don't forget to set your status using /status !"
+enable-join-message-reminder: true
+join-message-reminder: "§7Don't forget to set your status using §e/status §7!"
 
-# TODO: NOT YET IMPLEMENTED
 # Alert players when someone starts recording or streaming
 # Keep %player% to display where the player's name in the message!
 enable-media-alerts: false

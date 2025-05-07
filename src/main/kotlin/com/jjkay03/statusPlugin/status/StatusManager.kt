@@ -15,5 +15,6 @@ class StatusManager: Listener {
         val player = event.player
         StatusUtils.addStatusPlayer(player) // Add player to PLAYERS_STATUSES
         StatusUtils.updateTabStatus(player) // Set status in tab
+        StatusUtils.joinMessageReminder(player) // Send player reminder to set status
     }
 }

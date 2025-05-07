@@ -1,9 +1,13 @@
 package com.jjkay03.statusPlugin.status
 
 import com.jjkay03.statusPlugin.Saves
+import com.jjkay03.statusPlugin.StatusPlugin
 import com.jjkay03.statusPlugin.Utils
 import net.kyori.adventure.text.Component
+import net.kyori.adventure.text.event.ClickEvent
+import net.kyori.adventure.text.event.HoverEvent
 import net.kyori.adventure.text.format.NamedTextColor
+import org.bukkit.Bukkit
 import org.bukkit.entity.Player
 
 object StatusUtils {
@@ -72,4 +76,20 @@ object StatusUtils {
         Utils.messageAllPlayers(alertMessage)
     }
 
+    // Function to send player join message (reminder to set status) if feature is enabled in config
+    fun joinMessageReminder(player: Player, tickDelay: Long = 20L) {
+        if (!Saves.CONFIG_ENABLE_JOIN_MESSAGE_REMINDER) return
+
+        // Build clickable message
+        val message = Component.text()
+            .content(Saves.CONFIG_JOIN_MESSAGE_REMINDER)
+            .clickEvent(ClickEvent.runCommand("/status"))
+            .hoverEvent(HoverEvent.hoverEvent(HoverEvent.Action.SHOW_TEXT, Component.text("§eClick to set status")))
+            .build()
+
+        // Send message with delay
+        Bukkit.getScheduler().runTaskLater(StatusPlugin.INSTANCE, Runnable {
+            player.sendMessage(message)
+        }, tickDelay)
+    }
 }

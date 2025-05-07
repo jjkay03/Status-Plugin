@@ -15,8 +15,8 @@ class Saves {
         val TAB_PREFIX_SYMBOL = Component.text("▌")
 
         // Config options
-        var CONFIG_ENABLE_JOIN_MESSAGE = false
-        lateinit var CONFIG_JOIN_MESSAGE: String
+        var CONFIG_ENABLE_JOIN_MESSAGE_REMINDER = false
+        lateinit var CONFIG_JOIN_MESSAGE_REMINDER: String
 
         var CONFIG_ENABLE_MEDIA_ALERTS = false
         lateinit var CONFIG_MEDIA_ALERT_RECORD: String
@@ -30,8 +30,8 @@ class Saves {
     init {
         // Get all data from config on initialization
         val config = StatusPlugin.INSTANCE.config
-        CONFIG_ENABLE_JOIN_MESSAGE = config.getBoolean("enable-join-message")
-        CONFIG_JOIN_MESSAGE = config.getString("join-message") ?: "§cJoin message error, invalid config!"
+        CONFIG_ENABLE_JOIN_MESSAGE_REMINDER = config.getBoolean("enable-join-message-reminder")
+        CONFIG_JOIN_MESSAGE_REMINDER = config.getString("join-message-reminder") ?: "§cJoin message reminder error, invalid config!"
 
         CONFIG_ENABLE_MEDIA_ALERTS = config.getBoolean("enable-media-alerts")
         CONFIG_MEDIA_ALERT_RECORD = config.getString("media-alert-record") ?: "§cMedia alert record error, invalid config!"
