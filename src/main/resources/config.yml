@@ -17,6 +17,7 @@ media-alert-record: "§7%player% is recording!"
 media-alert-stream: "§7%player% is streaming!"
 
 
+# TODO: NOT YET IMPLEMENTED!
 # Tab Server name to display in tab
 enable-tab-server-name: false
 tab-server-name: "§e§lSERVER NAME"
