@@ -12,7 +12,7 @@ join-message-reminder: "§7Don't forget to set your status using §e/status §7!
 
 # Alert players when someone starts recording or streaming
 # Keep %player% to display where the player's name in the message!
-enable-media-alerts: false
+enable-media-alerts: true
 media-alert-record: "§7%player% is recording!"
 media-alert-stream: "§7%player% is streaming!"
 
