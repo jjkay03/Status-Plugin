@@ -31,6 +31,24 @@ class StatusCommand : CommandExecutor, TabCompleter {
                 StatusUtils.setPlayerStatus(sender, status)
             }
 
+            // INFO
+            "info" -> {
+                sender.sendMessage(" ")
+                sender.sendMessage("§l§nSTATUS COLOR INFO")
+                sender.sendMessage(" ")
+                sender.sendMessage("AVAILABILITY:")
+                sender.sendMessage(StatusText.AVAILABILITY_NONE)
+                sender.sendMessage(StatusText.AVAILABILITY_OPEN)
+                sender.sendMessage(StatusText.AVAILABILITY_DO_NOT_DISTURB)
+                sender.sendMessage(" ")
+                sender.sendMessage("MEDIA:")
+                sender.sendMessage(StatusText.MEDIA_NONE)
+                sender.sendMessage(StatusText.MEDIA_RECORDING)
+                sender.sendMessage(StatusText.MEDIA_STREAMING)
+                sender.sendMessage(" ")
+
+            }
+
             // GUI
             "gui" -> { openStatusGUI(sender) }
         }
@@ -43,7 +61,7 @@ class StatusCommand : CommandExecutor, TabCompleter {
         if (sender !is Player) return emptyList()
 
         return when (args.size) {
-            1 -> listOf("gui", "set").filter { it.startsWith(args[0], ignoreCase = true) }
+            1 -> listOf("gui", "info", "set").filter { it.startsWith(args[0], ignoreCase = true) }
 
             2 -> if (args[0].equals("set", ignoreCase = true)) {
                 Status.entries
