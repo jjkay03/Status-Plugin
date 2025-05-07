@@ -1,5 +1,6 @@
 package com.jjkay03.statusPlugin
 
+import com.jjkay03.statusPlugin.status.StatusCommand
 import com.jjkay03.statusPlugin.status.StatusManager
 import org.bukkit.plugin.java.JavaPlugin
 
@@ -19,8 +20,11 @@ class StatusPlugin : JavaPlugin() {
 
         Saves() // Load all variables in saves class
 
+        // CLASS VARIABLES
+        val statusCommand = StatusCommand()
+
         // COMMANDS
-        // ...
+        getCommand("status")?.apply { setExecutor(statusCommand); tabCompleter = statusCommand }
 
         // REGISTER EVENTS
         server.pluginManager.registerEvents(StatusManager(), this)

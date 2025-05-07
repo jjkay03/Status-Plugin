@@ -1,8 +1,20 @@
 name: StatusPlugin
 version: '1.0'
-main: com.jjkay03.statusPlugin.StatusPlugin
-api-version: '1.21'
-load: STARTUP
+
 authors: [ jjkay03 ]
 description: Allows players to set a status in the tab list.
 website: https://jjkay03.com/
+
+main: com.jjkay03.statusPlugin.StatusPlugin
+api-version: '1.21'
+load: STARTUP
+
+commands:
+  status:
+    permission: statusplugin.command.status
+    permission-message: "You do not have permission to use this command"
+
+permissions:
+  statusplugin.command.status:
+    description: Allows use of the /status command
+    default: true

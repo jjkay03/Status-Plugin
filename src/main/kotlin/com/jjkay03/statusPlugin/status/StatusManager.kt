@@ -14,6 +14,6 @@ class StatusManager: Listener {
     fun onPlayerJoin(event: PlayerJoinEvent) {
         val player = event.player
         StatusUtils.addStatusPlayer(player) // Add player to PLAYERS_STATUSES
-        StatusUtils.setTabStatus(player) // Set status in tab
+        StatusUtils.updateTabStatus(player) // Set status in tab
     }
 }

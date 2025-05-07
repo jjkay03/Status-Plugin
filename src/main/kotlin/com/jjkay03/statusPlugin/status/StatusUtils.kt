@@ -21,20 +21,30 @@ object StatusUtils {
 
     // Function to build the status string of a player
     fun buildPlayerStatusPrefix(status: PlayerStatus): Component {
-        val status1Comp = Saves.TAB_PREFIX_SYMBOL.color(status.status1.color)
-        val status2Comp = Saves.TAB_PREFIX_SYMBOL.color(status.status2.color)
+        val status1Comp = Saves.TAB_PREFIX_SYMBOL.color(status.statusAvailability.color)
+        val status2Comp = Saves.TAB_PREFIX_SYMBOL.color(status.statusMedia.color)
         val nameComp = Component.text(status.player.name).color(NamedTextColor.WHITE)
         return status1Comp.append(status2Comp).append(nameComp)
     }
 
     // Function to apply status to player in tab
-    fun setTabStatus(player: Player) {
+    fun updateTabStatus(player: Player) {
         val playerStatus = getStatusPlayer(player) ?: return
         val nameComponent = buildPlayerStatusPrefix(playerStatus)
         player.playerListName(nameComponent)
 
         // TODO: DEBUG (REMOVE LATER)
         player.sendMessage("\n§bSetting ${player.name} status: ${getStatusPlayer(player).toString()}\n")
+    }
+
+    // Function to set a player's status
+    fun setPlayerStatus(player: Player, status: Status, feedbackMsg: Boolean = true) {
+        addStatusPlayer(player) // Add player to list if not already
+        val playerStatus = getStatusPlayer(player) ?: return
+        if (status.type == StatusType.AVAILABILITY) playerStatus.statusAvailability = status
+        if (status.type == StatusType.MEDIA) playerStatus.statusMedia = status
+        updateTabStatus(player) // Update status in tab
+        if (feedbackMsg) player.sendMessage("§7Status type ${status.type} set to ${status.name}")
     }
 
 }
