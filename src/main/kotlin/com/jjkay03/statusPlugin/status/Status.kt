@@ -22,16 +22,16 @@ enum class Status(
         Saves.COLOR_GRAY
     ),
 
-    AVAILABILITY_DO_NOT_DISTURB(
-        StatusType.AVAILABILITY,
-        "Do Not Disturb",
-        Saves.COLOR_RED
-    ),
-
     AVAILABILITY_OPEN(
         StatusType.AVAILABILITY,
         "Open",
         Saves.COLOR_GREEN
+    ),
+
+    AVAILABILITY_DO_NOT_DISTURB(
+        StatusType.AVAILABILITY,
+        "Do Not Disturb",
+        Saves.COLOR_RED
     ),
 
     // == MEDIA STATUSES ==============================================================================================
