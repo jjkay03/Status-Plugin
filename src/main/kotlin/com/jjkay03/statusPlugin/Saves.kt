@@ -22,8 +22,8 @@ class Saves {
         lateinit var CONFIG_MEDIA_ALERT_RECORD: String
         lateinit var CONFIG_MEDIA_ALERT_STREAM: String
 
-        var ENABLE_TAB_SERVER_NAME = false
-        lateinit var TAB_SERVER_NAME: String
+        var CONFIG_ENABLE_TAB_SERVER_NAME = false
+        lateinit var CONFIG_TAB_SERVER_NAME: String
 
     }
 
@@ -37,7 +37,7 @@ class Saves {
         CONFIG_MEDIA_ALERT_RECORD = config.getString("media-alert-record") ?: "§cMedia alert record error, invalid config!"
         CONFIG_MEDIA_ALERT_STREAM = config.getString("media-alert-stream") ?: "§cMedia alert stream error, invalid config!"
 
-        ENABLE_TAB_SERVER_NAME = config.getBoolean("enable-tab-server-name")
-        TAB_SERVER_NAME = config.getString("tab-server-name") ?: "§cServer name error, invalid config!"
+        CONFIG_ENABLE_TAB_SERVER_NAME = config.getBoolean("enable-tab-server-name")
+        CONFIG_TAB_SERVER_NAME = config.getString("tab-server-name") ?: "§cServer name error, invalid config!"
     }
 }

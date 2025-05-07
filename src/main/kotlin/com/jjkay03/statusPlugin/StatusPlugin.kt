@@ -2,6 +2,7 @@ package com.jjkay03.statusPlugin
 
 import com.jjkay03.statusPlugin.status.StatusCommand
 import com.jjkay03.statusPlugin.status.StatusManager
+import com.jjkay03.statusPlugin.utils.TabServerName
 import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
 import org.ipvp.canvas.MenuFunctionListener
@@ -31,6 +32,7 @@ class StatusPlugin : JavaPlugin() {
         // REGISTER EVENTS
         Bukkit.getPluginManager().registerEvents(MenuFunctionListener(), this) // Canvas MenuFunctionListener
         server.pluginManager.registerEvents(StatusManager(), this)
+        server.pluginManager.registerEvents(TabServerName(), this)
     }
 
     // Plugin shutdown logic
