@@ -52,11 +52,11 @@ object StatusUtils {
         if (status.type == StatusType.MEDIA) {
             if (playerStatus.statusMedia == status) return // Skip if already set
             playerStatus.statusMedia = status
+            mediaAlert(playerStatus) // Send media alert to all players
         }
 
         updateTabStatus(player) // Update status in tab
         if (feedbackMsg) player.sendMessage("§7Status type ${status.type} set to ${status.statusName}")
-        mediaAlert(playerStatus) // Send media alert to all players
     }
 
     // Function that alerts player with media alerts (rec or stream) if feature is enabled in config
