@@ -4,13 +4,19 @@
 
 # Set colors using formatting codes "§", view all codes here: https://minecraft.wiki/w/Talk:Formatting_codes
 
+# TODO: NOT YET IMPLEMENTED
 # Join message to remind the player to set their status
 enable-join-message: true
 join-message: "§7Don't forget to set your status using /status !"
 
+# TODO: NOT YET IMPLEMENTED
 # Alert players when someone starts recording or streaming
+# Keep %player% to display where the player's name in the message!
 enable-media-alerts: false
+media-alert-record: "§7%player% started recording!"
+media-alert-stream: "§7%player% started streaming!"
 
+# TODO: NOT YET IMPLEMENTED
 # Tab Server name to display in tab
 enable-tab-server-name: false
-tab-server-name: "§eServer Name"
+tab-server-name: "§e§lSERVER NAME"
