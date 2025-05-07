@@ -9,10 +9,11 @@ class StatusManager: Listener {
         var PLAYERS_STATUSES = mutableListOf<PlayerStatus>()
     }
 
-    // Add player to PLAYERS_STATUSES when they join
+    // Deal with player status when they join
     @EventHandler
     fun onPlayerJoin(event: PlayerJoinEvent) {
         val player = event.player
-        StatusUtils.addPlayerToStatusList(player)
+        StatusUtils.addStatusPlayer(player) // Add player to PLAYERS_STATUSES
+        StatusUtils.setTabStatus(player) // Set status in tab
     }
 }

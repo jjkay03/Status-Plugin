@@ -1,6 +1,7 @@
 package com.jjkay03.statusPlugin.status
 
 import com.jjkay03.statusPlugin.Saves
+import net.kyori.adventure.text.format.TextColor
 
 enum class StatusType() {
     AVAILABILITY,
@@ -8,9 +9,9 @@ enum class StatusType() {
 }
 
 enum class Status(
-    type: StatusType,
-    statusName: String,
-    prefix: String
+    val type: StatusType,
+    val statusName: String,
+    val color: TextColor
 ) {
 
     // == AVAILABILITY STATUSES =======================================================================================
@@ -18,19 +19,19 @@ enum class Status(
     AVAILABILITY_NONE(
         StatusType.AVAILABILITY,
         "None",
-        "${Saves.Companion.COLOR_GRAY}${Saves.Companion.TAB_PREFIX_SYMBOL}"
+        Saves.COLOR_GRAY
     ),
 
     AVAILABILITY_DO_NOT_DISTURB(
         StatusType.AVAILABILITY,
         "Do Not Disturb",
-        "${Saves.Companion.COLOR_RED}${Saves.Companion.TAB_PREFIX_SYMBOL}"
+        Saves.COLOR_RED
     ),
 
     AVAILABILITY_OPEN(
         StatusType.AVAILABILITY,
         "Open",
-        "${Saves.Companion.COLOR_GREEN}${Saves.Companion.TAB_PREFIX_SYMBOL}"
+        Saves.COLOR_GREEN
     ),
 
     // == MEDIA STATUSES ==============================================================================================
@@ -38,19 +39,19 @@ enum class Status(
     MEDIA_NONE(
         StatusType.MEDIA,
         "None",
-        "${Saves.Companion.COLOR_GRAY}${Saves.Companion.TAB_PREFIX_SYMBOL}"
+        Saves.COLOR_GRAY
     ),
 
     MEDIA_RECORDING(
         StatusType.MEDIA,
         "Recording",
-        "${Saves.Companion.COLOR_RED}${Saves.Companion.TAB_PREFIX_SYMBOL}"
+        Saves.COLOR_RED
     ),
 
     MEDIA_STREAMING(
         StatusType.MEDIA,
         "Streaming",
-        "${Saves.Companion.COLOR_PURPLE}${Saves.Companion.TAB_PREFIX_SYMBOL}"
+        Saves.COLOR_PURPLE
     );
 
 }
